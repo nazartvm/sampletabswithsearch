@@ -1,20 +1,69 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="message-header">
 
+</div>
+<div class="header-elements">
+  <div class="header-text">{{currentTab}}</div>
+  <span>Bot:</span><select></select>
+</div>
+<div class="row">
+<div class="col-md-1"></div>
+<div class="col-md-11" style="
+margin-top: 12px;
+">
+  <div class="container main-container">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs message-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#cusomermsg"(click)="getcustomerdata()">Customer Message</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#agentmsg" (click)="getagentdata()">Agent Message</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#cannedmsg" (click)="getcanneddata()">Canned Message</a>
+      </li>
+      <li class="nav-item searchboxli">
+        <input type="text" placeholder="search" (keyup)="search($event)"/>
+      </li>
+    </ul>
+  
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-controls">
+          <i class="fas fa-download" (click)="import()"></i>
+          <i class="fas fa-upload" (click)="export()"></i>
+      </div>
+      <div id="cusomermsg" class="container tab-pane active"><br>
+        <i class="fas fa-spinner fa-spin" *ngIf="messageList.length==0"></i>     
+        <div *ngFor="let item of messageList; let i = index" class="messageparent">
+            <div *ngIf="messageList[i].show">
+          <span class="messagetitle">{{item.title}} <i class="far fa-edit" style="float:right"></i></span>
+          <span class="messagedata">{{item.message}}</span>
+          <hr />
+          </div>
+        </div> 
+      </div>
+      <div id="agentmsg" class="container tab-pane fade"><br>
+        <i class="fas fa-spinner fa-spin" *ngIf="messageList.length==0"></i>   
+        <div *ngFor="let item of messageList; let i = index" class="messageparent">
+            <div *ngIf="messageList[i].show">
+            <span class="messagetitle">{{item.title}} <i class="far fa-edit" style="float:right"></i></span>
+            <span class="messagedata">{{item.message}}</span>
+            <hr />
+          </div>    
+          </div>
+      </div>
+      <div id="cannedmsg" class="container tab-pane fade"><br>
+        <i class="fas fa-spinner fa-spin" *ngIf="messageList.length==0"></i>      
+        <div *ngFor="let item of messageList; let i = index" class="messageparent">
+          <div *ngIf="messageList[i].show">
+            <span class="messagetitle">{{item.title}} <i class="far fa-edit" style="float:right"></i></span>
+            <span class="messagedata">{{item.message}}</span>
+            <hr />
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

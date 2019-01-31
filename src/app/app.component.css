@@ -1,0 +1,68 @@
+body{
+    background: #F9F9F9;    
+}
+.message-header{
+    background: #333947;
+    height: 50px;
+}
+.left-container{
+    background: #333947;
+    width: 4%;
+    height: 100%;
+}
+.right-container{
+    padding: 2%;
+}
+.header-elements{
+    margin: 0px auto;
+    margin-left: 14%;
+}
+.message-tabs{
+    margin-left: -14px;
+}
+ul.message-tabs a{
+    background:#dee2e6;
+    color: #007bff;
+}
+ul.message-tabs a.active{
+    background: #007bff;
+    color: white;
+}
+.searchboxli{
+    margin-left: 41%;
+    margin-top: 6px;
+}
+.main-container{
+    border-radius: 6px;    
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    background: white;
+}
+.tab-controls{
+    float: right;
+    margin-right: 30px;
+}
+.tab-controls i{
+    color: #aaadaf;
+    cursor: pointer;
+}
+.messagedata{
+    color: #aaadaf;
+}
+.messagetitle{
+    display: block;
+    color: #007bff;
+}
+.messageparent{
+    padding: 1%;
+}
+.messageparent hr {
+    border:none;
+    border-top: 2px dotted #dee2e6;
+    color:#fff;
+    background-color:#fff;
+    height:1px;
+    width:100%;
+  }
+  .messageparent .fa-edit{
+      cursor: pointer;
+  }
