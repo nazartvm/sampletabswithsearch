@@ -1,12 +1,17 @@
+<!--Header div starts!-->
 <div class="message-header">
 
 </div>
+<!--Header div ends!-->
+<!--Header elements starts which has current tab text and empty dropdown!-->
 <div class="header-elements">
   <div class="header-text">{{currentTab}}</div>
   <span>Bot:</span><select></select>
 </div>
+<!--end of the div elements!-->
 <div class="row">
 <div class="col-md-1"></div>
+<!--Right container div starts which has tabs and messages!-->
 <div class="col-md-11" style="
 margin-top: 12px;
 ">
@@ -14,25 +19,29 @@ margin-top: 12px;
     <!-- Nav tabs -->
     <ul class="nav nav-tabs message-tabs" role="tablist">
       <li class="nav-item">
+        <!--href click look for cusomermsg id and that will show using bootstrap!-->
         <a class="nav-link active" data-toggle="tab" href="#cusomermsg"(click)="getcustomerdata()">Customer Message</a>
       </li>
       <li class="nav-item">
+        <!--href click look for agentmsg id and that will show using bootstrap!-->
         <a class="nav-link" data-toggle="tab" href="#agentmsg" (click)="getagentdata()">Agent Message</a>
       </li>
       <li class="nav-item">
+        <!--href click look for cannedmsg id and that will show using bootstrap!-->
         <a class="nav-link" data-toggle="tab" href="#cannedmsg" (click)="getcanneddata()">Canned Message</a>
       </li>
       <li class="nav-item searchboxli">
         <input type="text" placeholder="search" (keyup)="search($event)"/>
       </li>
     </ul>
-  
-    <!-- Tab panes -->
+  <!--Nav tab ends!-->
+    <!-- tabs div based on my tab pick this will display the tab -->
     <div class="tab-content">
       <div class="tab-controls">
           <i class="fas fa-download" (click)="import()"></i>
           <i class="fas fa-upload" (click)="export()"></i>
       </div>
+      <!--Customer message tab if i select the customer tab button this will display!-->
       <div id="cusomermsg" class="container tab-pane active"><br>
         <i class="fas fa-spinner fa-spin" *ngIf="messageList.length==0"></i>     
         <div *ngFor="let item of messageList; let i = index" class="messageparent">
@@ -43,6 +52,8 @@ margin-top: 12px;
           </div>
         </div> 
       </div>
+      <!--Customer message ends!-->
+      <!--agent message tab if i select the agent tab button this will display!-->
       <div id="agentmsg" class="container tab-pane fade"><br>
         <i class="fas fa-spinner fa-spin" *ngIf="messageList.length==0"></i>   
         <div *ngFor="let item of messageList; let i = index" class="messageparent">
@@ -53,6 +64,8 @@ margin-top: 12px;
           </div>    
           </div>
       </div>
+      <!--agent message ends!-->
+      <!--canned message tab if i select the canned tab button this will display!-->
       <div id="cannedmsg" class="container tab-pane fade"><br>
         <i class="fas fa-spinner fa-spin" *ngIf="messageList.length==0"></i>      
         <div *ngFor="let item of messageList; let i = index" class="messageparent">
@@ -63,7 +76,10 @@ margin-top: 12px;
           </div> 
         </div>
       </div>
+      <!--canned message ends!-->
     </div>
+    <!--End of the tab data!-->
   </div>
 </div>
+<!--End of the right container div!-->
 </div>

@@ -15,11 +15,14 @@ export class AppComponent {
   constructor(private messageService:MessageserviceService){
    this.getMessage();
   }
+  //this function add additional properties to my list for the search purpose
   addShow(){
     this.messageList.map((item)=>{
       item.show=true;
     })
   }
+  //end of the function
+  //function to get the message
   getMessage(){
     this.messageService.GetMessageData(0).subscribe(
       (response: Response) => {
@@ -31,6 +34,7 @@ export class AppComponent {
       }
     )
   }
+  //end of the function
   getcustomerdata(){
     this.messageList=[];
     this.messageService.GetMessageData(0).subscribe(
