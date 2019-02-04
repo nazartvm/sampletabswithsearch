@@ -66,3 +66,9 @@ ul.message-tabs a.active{
   .messageparent .fa-edit{
       cursor: pointer;
   }
+  .filebutton{
+    text-align: center;
+    font-size: 100px;
+    margin-left: 43%;
+    cursor: pointer;
+  }

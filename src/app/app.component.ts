@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Injectable } from '@angular/core';
 import {MessageserviceService} from '../services/messageservice.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -74,9 +75,6 @@ export class AppComponent {
     )
     this.currentTab="Canned Message";
   }
-  import(){
-    alert("import");
-  }
   //export click
   export(){
     alert("export");
@@ -84,9 +82,10 @@ export class AppComponent {
   //end of the click
   //search function
   search(event: any) { // without type info
-    let searchKey=event.target.value;
+    let searchKey=event.target.value.toLowerCase();//this add now
     this.messageList.map((item)=>{
-     if(item.title.indexOf(searchKey)==-1 && item.message.indexOf(searchKey)==-1){
+      //here also lowercase added now
+     if(item.title.toLowerCase().indexOf(searchKey)==-1){
        item.show=false;
      }
      else{
@@ -96,4 +95,7 @@ export class AppComponent {
     //console.log(event.target.value );
   }
   //end of the function
+filetrigger(){
+  document.getElementById('fileid').click();  
+}
 }
